@@ -1,12 +1,12 @@
-from flask import Flask, jsonify #importações
+from flask import Flask, jsonify, render_template #importações
 import os
 
-app = Flask(__name__) # criando o app
+app = Flask(__name__, template_folder="templates") # criando o app
 
 
 @app.route('/') # rotas
 def index():
-    return jsonify({"Mensagem": "Bom dia, Maira"})
+    return render_template("index.html")
 
 
 if __name__ == '__main__':
